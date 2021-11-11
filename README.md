@@ -134,6 +134,22 @@ getDeals(params?: DealsParams)
 getDeal(id: number)
 
 getDealSafetyOrders(id: number)
+
+botUpdate (params)
+
+botDisable (bot_id)
+
+botEnable (bot_id)
+
+botStartNewDeal (params)
+
+botDelete (bot_id)
+
+botPaniceSellAllDeals (bot_id)
+
+botCancelAllDeals (bot_id)
+
+botShow (bot_id)
 ```
 
 ### Custom Request
