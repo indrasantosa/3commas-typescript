@@ -123,6 +123,8 @@ cancelSubTrade(smartTradeId: number, subTradeId: number)
 ### Bots
 
 ```ts
+botCreate(params?: BotsParams)
+
 getBots(params?: BotsParams)
 
 getBot(id: number)

@@ -56,6 +56,7 @@ export declare class API {
     /**
      * Bots methods
      */
+    botCreate(params: any): Promise<any>;
     getBots(params?: BotsParams): Promise<any>;
     getBotsStats(params?: BotsStatsParams): Promise<any>;
     getBot(id: number): Promise<any>;

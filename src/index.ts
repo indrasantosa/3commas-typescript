@@ -332,6 +332,10 @@ export class API {
    * Bots methods
    */
 
+  async botCreate(params) {
+    return await this.request('POST', 1, '/bots/create_bot?', params);
+  }
+
   async getBots(
     params: BotsParams = {
       limit: 50,

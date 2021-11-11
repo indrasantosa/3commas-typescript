@@ -189,6 +189,9 @@ class API {
     /**
      * Bots methods
      */
+    async botCreate(params) {
+        return await this.request('POST', 1, '/bots/create_bot?', params);
+    }
     async getBots(params = {
         limit: 50,
         sort_by: 'created_at',
