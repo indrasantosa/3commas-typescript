@@ -25,9 +25,10 @@ class API {
             headers: Object.assign({ APIKEY: this.KEY }, ((options === null || options === void 0 ? void 0 : options.forcedMode) && { 'Forced-Mode': options === null || options === void 0 ? void 0 : options.forcedMode })),
         });
         this.axios.interceptors.request.use((config) => {
-            let data = Object.assign(Object.assign({}, config.data), { api_key: this.KEY, secret: this.SECRETS });
+            let data = Object.assign({}, config.data);
             let payload = JSON.stringify(data);
             if (config.method === 'get') {
+                data = Object.assign(Object.assign({}, data), { api_key: this.KEY, secret: this.SECRETS });
                 payload = qs_1.default.stringify(config.params);
                 data = null;
             }
