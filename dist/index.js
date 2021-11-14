@@ -191,7 +191,7 @@ class API {
      * Bots methods
      */
     async botCreate(params) {
-        return await this.request('POST', 1, '/bots/create_bot?', params);
+        return await this.request('POST', 1, '/bots/create_bot', params);
     }
     async getBots(params = {
         limit: 50,
@@ -220,34 +220,34 @@ class API {
         return await this.request('GET', 1, `/deals/${id}/market_orders`);
     }
     async botUpdate(params) {
-        return await this.request('PATCH', 1, `/bots/${params.bot_id}/update?`, params);
+        return await this.request('PATCH', 1, `/bots/${params.bot_id}/update`, params);
     }
     async botDisable(bot_id) {
-        return await this.request('POST', 1, `/bots/${bot_id}/disable?`, {
+        return await this.request('POST', 1, `/bots/${bot_id}/disable`, {
             bot_id,
         });
     }
     async botEnable(bot_id) {
-        return await this.request('POST', 1, `/bots/${bot_id}/enable?`, { bot_id });
+        return await this.request('POST', 1, `/bots/${bot_id}/enable`, { bot_id });
     }
     async botStartNewDeal(params) {
-        return await this.request('POST', 1, `/bots/${params.bot_id}/start_new_deal?`, params);
+        return await this.request('POST', 1, `/bots/${params.bot_id}/start_new_deal`, params);
     }
     async botDelete(bot_id) {
-        return await this.request('POST', 1, `/bots/${bot_id}/delete?`, { bot_id });
+        return await this.request('POST', 1, `/bots/${bot_id}/delete`, { bot_id });
     }
     async botPaniceSellAllDeals(bot_id) {
-        return await this.request('POST', 1, `/bots/${bot_id}/panic_sell_all_deals?`, {
+        return await this.request('POST', 1, `/bots/${bot_id}/panic_sell_all_deals`, {
             bot_id,
         });
     }
     async botCancelAllDeals(bot_id) {
-        return await this.request('POST', 1, `/bots/${bot_id}/cancel_all_deals?`, {
+        return await this.request('POST', 1, `/bots/${bot_id}/cancel_all_deals`, {
             bot_id,
         });
     }
     async botShow(bot_id) {
-        return await this.request('GET', 1, `/bots/${bot_id}/show?`, {
+        return await this.request('GET', 1, `/bots/${bot_id}/show`, {
             bot_id,
         });
     }
