@@ -3,6 +3,10 @@ import Hex from 'crypto-js/enc-hex';
 
 export function sign(secret: string, url: string, params?: string): string {
   const message = params ? `${url}?${params}` : url;
+  console.log(`Signing message: ${message}`);
 
-  return HmacSHA256(message, secret).toString(Hex);
+  const result = HmacSHA256(message, secret).toString(Hex);
+  console.log(`Result ${result}`);
+
+  return result;
 }
