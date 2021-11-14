@@ -51,12 +51,15 @@ export class API {
       (config) => {
         let data = {
           ...config.data,
-          api_key: this.KEY,
-          secret: this.SECRETS,
         };
         let payload = JSON.stringify(data);
 
         if (config.method === 'get') {
+          data = {
+            ...data,
+            api_key: this.KEY,
+            secret: this.SECRETS,
+          };
           payload = qs.stringify(config.params);
           data = null;
         }
